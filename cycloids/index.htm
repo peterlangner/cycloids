@@ -1,0 +1,98 @@
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+<meta name="description"
+	content="This web application is made to better understand cycloids defined by C.A. Petri.">
+<meta name="keywords"
+	content="C.A. Petri, physics, cycloid, cycloids, net, petri net, lorenz factor">
+<meta name="author" content="Peter Langner">
+<title>Cycloids' Characteristics</title>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async
+	src="https://www.googletagmanager.com/gtag/js?id=UA-29330072-2">
+	
+</script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-29330072-2');
+</script>
+
+<script type="text/javascript" src="cango/Cango3D3v19.js"></script>
+<script type="text/javascript" src="cango/Cango-13v08.js"></script>
+<script type="text/javascript" src="cango/CangoAxes-4v01.js"></script>
+<script type="text/javascript" src="Cycloids1_4_3.js"></script>
+
+</head>
+<body onload="onLoad()">
+	<div>
+		<div>
+			<h1>Cycloids' Characteristics</h1>
+		</div>
+		<p>
+			This web application is made to better understand cycloids. They were
+			defined by C.A. Petri in <i>"Nets, Time and Space", Theoretical
+				Computer Science 153 (1996), p. 3-48</i>
+		</p>
+		<div>
+			<canvas id="Cycloid" width="500" height="500"></canvas>
+		</div>
+		<div>
+			<form>
+				<p>
+					Choose predefined cycloids: <select
+						onclick="setValues('Cycloid',this.value);"
+						onchange="setValues('Cycloid',this.value);">
+						<option value='1'>Bit-pair-Equality</option>
+						<option value='2'>Dual of the two state Automation - not a net! (deg.)</option>
+						<option value='3'>Synchronizer, Bit Exchange</option>
+						<option value='4'>Synchronizer, Bit Exchange (deg.)</option>
+						<option value='5'>XOR-Transfer</option>
+						<option value='6'>XOR-Transfer (deg.)</option>
+						<option value='7'>Majority Transfer</option>
+						<option value='8'>Quine Transfer (deg.)</option>
+						<option value='9'>System at Rest</option>
+						<option value='10'>System in Motion</option>
+					</select>
+				</p>
+			</form>
+		</div>
+		<div>
+			<form name="Formular" action="">
+				<label for="alpha">Cycloid = &alpha;:</label> <input type="number"
+					name="alpha" size="2" maxlength="2" value="1"> <label
+					for="beta">&beta;:</label> <input type="number" name="beta"
+					size="2" maxlength="2" value="1"> <label for="gamma">&gamma;:</label>
+				<input type="number" name="gamma" size="2" maxlength="2" value="1">
+				<label for="delta">&delta;:</label> <input type="number"
+					name="delta" size="2" maxlength="2" value="1"> <input
+					type="button" value="Show Cycloid" id="ShowCycloid"
+					onclick="Cycloid('Cycloid')"><br>
+				<br> 
+				<input type="checkbox" name="showGrid"   value="true"  onclick="Cycloid('Cycloid')" checked="checked">Show Standard Grid<br> 
+				<input type="checkbox" name="showXY"	 value="false"  onclick="Cycloid('Cycloid')" >Show (x,t) coordinates of Cycloid<br>
+				<input type="checkbox" name="showXTAxis" value="false"  onclick="Cycloid('Cycloid')" >Show (x,t) axis, with x = &xi; - &eta;	and t = &xi; + &eta;<br>
+				<input type="checkbox" name="showXE"     value="false" onclick="Cycloid('Cycloid')">Show <i>Minkowski</i> coordinates (&xi;,&eta;) of Cycloid<br> 
+				<input type="checkbox" name="showXEAxis" value="true"  onclick="Cycloid('Cycloid')" checked="checked">Show <i>Minkowski</i> (&xi;,&eta;) axis<br> 
+				<input type="checkbox" name="abgd"       value="true" onclick="Cycloid('Cycloid')" checked="checked">Show &alpha;, &beta;, &gamma;, &delta;, with &alpha; = +&xi;<sub>1</sub>,&beta; = -&eta;<sub>1</sub>,&gamma; = +&xi;<sub>2</sub> and &delta; = +&eta;<sub>2</sub><br> 
+				<input type="checkbox" name="showTransitions" value="true" onclick="Cycloid('Cycloid')" checked="checked">Show Transitions with &xi;, &eta; coordinates<br>
+<!--  				<input type="checkbox" name="showFoldings" value="true" onclick="Cycloid('Cycloid')">Show Foldings<br> <br> -->
+				<input type="checkbox" name="useMathML" value="true" onclick="Cycloid('Cycloid')" checked="checked">Use MathML to show formulae<br>
+			</form>
+		</div>
+		<div id="result"></div>		
+		<p>
+			<small>&copy; 2013 by <a href="http://www.adventas.de"
+				target="_blank">Peter Langner</a>, All Rights Reserved. Version
+				1.4.3
+			</small>
+		</p>
+	</div>
+</body>
+</html>
