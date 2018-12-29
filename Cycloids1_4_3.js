@@ -9,6 +9,7 @@
   By: Peter Langner, www.adventas.de
   Web App: cycloids.adventas.de
   License: Apache License 2.0
+  Github: https://github.com/peterlangner/cycloids
   =================================================================*/
 /**
  * This function checks, if the used browser supports MathML
